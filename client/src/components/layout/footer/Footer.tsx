@@ -6,7 +6,7 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <div className={`wrapper`}>&copy; {year ?? 2026}</div>
+      <div className={`wrapper`}>&copy; {year ?? 2026} Reijjo</div>
     </footer>
   );
 }

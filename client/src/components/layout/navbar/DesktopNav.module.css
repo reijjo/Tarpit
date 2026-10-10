@@ -1,0 +1,25 @@
+.desktop_nav_content {
+  background: linear-gradient(
+    to bottom right,
+    var(--primary-dark),
+    var(--primary-xdark)
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.5),
+    inset 0px 2px 4px rgb(from var(--primary-xlight) r g b / 0.125);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+}
+
+.nav_links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
