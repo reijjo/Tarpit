@@ -1,4 +1,5 @@
 .footer {
   padding-block: 1rem;
   background: var(--primary-base);
+  color: var(--text-light-muted);
 }
