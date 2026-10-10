@@ -1,0 +1,28 @@
+.nav {
+  padding-block: 0.75rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.nav_content {
+  background-color: var(--primary-xxdark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  padding-block: 1rem;
+
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.5),
+    inset 0px 2px 4px rgb(from var(--primary-xlight) r g b / 0.125);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+}
+
+.nav_links {
+  display: flex;
+  gap: 2rem;
+}

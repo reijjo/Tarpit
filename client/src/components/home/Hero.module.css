@@ -1,0 +1,16 @@
+.hero_section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80svh;
+  width: 100%;
+}
+
+.hero_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}

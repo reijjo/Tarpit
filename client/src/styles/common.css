@@ -1,0 +1,9 @@
+.wrapper {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding-inline: 2rem;
+
+  @media (width <= 680px) {
+    padding-inline: 1.5rem;
+  }
+}
