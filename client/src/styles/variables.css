@@ -24,6 +24,9 @@
   /* HEIGHTS */
   --nav-height: 75px;
 
+  /* BACKGROUND */
+  --bg: radial-gradient(50% 50%, rgb(255 255 255 / 0.125), transparent 90%);
+
   /* COLORS */
   /* primary */
   --primary-xxlight: #99cef7;

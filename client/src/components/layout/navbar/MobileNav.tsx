@@ -18,8 +18,6 @@ export default function MobileNav() {
     setMenuOpen(false);
   };
 
-  console.log("menuopen", menuOpen);
-
   return (
     <nav className={styles.mobile_nav} aria-label="Mobile navigation">
       <button
@@ -32,21 +30,20 @@ export default function MobileNav() {
       >
         {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
       </button>
-      {menuOpen && (
-        <div
-          id={MOBILE_MENU_ID}
-          className={styles.nav_open}
-          aria-label="Mobile menu"
-          hidden={!menuOpen}
-        >
-          <div className={styles.nav_logo}>
-            <Link href="/" onClick={closeMenu}>
-              TÄRPIT
-            </Link>
-          </div>
-          <NavLinks closeMenu={closeMenu} />
+
+      <div
+        id={MOBILE_MENU_ID}
+        className={`${styles.nav_open} ${menuOpen ? styles.is_open : ""}`}
+        aria-label="Mobile menu"
+        aria-hidden={!menuOpen}
+      >
+        <div className={styles.nav_logo}>
+          <Link href="/" onClick={closeMenu}>
+            TÄRPIT
+          </Link>
         </div>
-      )}
+        <NavLinks closeMenu={closeMenu} />
+      </div>
     </nav>
   );
 }

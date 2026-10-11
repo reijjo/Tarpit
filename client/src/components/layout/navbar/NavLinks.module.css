@@ -4,15 +4,19 @@
   justify-content: center;
   gap: 1.5rem;
   height: 100%;
+  text-transform: uppercase;
+  font-size: var(--text-sm);
 
   @media (width <= 680px) {
     flex-direction: column;
+    align-self: center;
   }
 }
 
 .btn_group {
   display: flex;
   gap: 1rem;
+  text-transform: capitalize;
 
   @media (width <= 680px) {
     flex-direction: column;

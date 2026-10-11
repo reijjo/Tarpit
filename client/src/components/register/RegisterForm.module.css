@@ -1,0 +1,53 @@
+.register_form_section {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(50% 50%, var(--primary-base), transparent 100%);
+
+  @media (width <= 1000px) {
+    background-image: url("../../../public/images/login-register/penkit-opti.webp");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.register_form_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: var(--nav-height);
+  gap: 2rem;
+
+  @media (width <= 1000px) {
+    border: 1px solid rgb(255 255 255 / 0.25);
+    border-radius: var(--radius-md);
+    background: linear-gradient(
+      to bottom right,
+      rgb(from var(--primary-base) r g b / 0.5),
+      rgb(from var(--primary-xdark) r g b / 0.5)
+    );
+    backdrop-filter: blur(8px);
+    padding: 4rem;
+    width: min(600px, 95%);
+  }
+
+  @media (width <= 680px) {
+    padding: 2rem;
+  }
+}
+
+.form_headers {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-wrap: balance;
+  gap: 0.5rem;
+}
+
+.register_form {
+  width: min(350px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
