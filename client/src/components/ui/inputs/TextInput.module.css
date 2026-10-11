@@ -1,0 +1,40 @@
+.text_input_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+
+  & label {
+    padding-left: 0.25rem;
+    text-transform: capitalize;
+    font-size: 1rem;
+  }
+}
+
+.text_input {
+  border: 2px solid var(--primary-xdark);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 1rem;
+
+  &:hover {
+    border-color: var(--primary-base);
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid var(--primary-xlight);
+  }
+}
+
+.sm {
+  padding: 0.25rem;
+}
+
+.md {
+  padding: 0.75rem;
+}
+
+.lg {
+  padding: 0.75rem 1.5rem;
+}

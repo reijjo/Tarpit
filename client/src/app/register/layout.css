@@ -1,0 +1,19 @@
+.auth_page {
+  display: flex;
+}
+
+.auth_page_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+
+  @media (width <= 1000px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.auth_page_image {
+  @media (width <= 1000px) {
+    display: none;
+  }
+}
