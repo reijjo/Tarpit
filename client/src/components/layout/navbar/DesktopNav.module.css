@@ -1,4 +1,4 @@
-.desktop_nav_content {
+.desktop_nav {
   background: linear-gradient(
     to bottom right,
     var(--primary-dark),
@@ -16,10 +16,8 @@
     inset 0px 2px 4px rgb(from var(--primary-xlight) r g b / 0.125);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.075);
-}
 
-.nav_links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  @media (width <= 680px) {
+    display: none;
+  }
 }

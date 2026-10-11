@@ -5,8 +5,8 @@
   --text-sm: 0.875rem;
   --text-base: 1.125rem;
   --text-lg: 1.25rem;
-  --text-light: #ecf0f9;
-  --text-light-muted: rgb(from #ecf0f9 r g b / 0.85);
+  --text-light: var(--secondary);
+  --text-light-muted: rgb(from var(--secondary) r g b / 0.85);
   --text-dark: #04060c;
 
   /* BORDER */
@@ -15,6 +15,11 @@
   --radius-md: 8px;
   --radius-lg: 16px;
   --radius-xl: 32px;
+
+  /* SHADOWS */
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.25), 0 2px 8px rgb(0 0 0 / 0.125);
+  --shadow-md: 0 4px 16px rgb(0 0 0 / 0.25), 0 8px 32px rgb(0 0 0 / 0.125);
+  --shadow-lg: 0 8px 24px rgb(0 0 0 / 0.25), 0 16px 48px rgb(0 0 0 / 0.2);
 
   /* HEIGHTS */
   --nav-height: 75px;

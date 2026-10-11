@@ -25,13 +25,23 @@ body {
 
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 main {
   flex-grow: 1;
+  background: radial-gradient(
+    50% 50%,
+    rgb(255 255 255 / 0.075),
+    transparent 90%
+  );
 
   &:not(.homepage) {
     padding-top: var(--nav-height);
+
+    /* @media (width <= 680px) {
+      padding-top: 2rem;
+    } */
   }
 }
 
