@@ -1,13 +1,17 @@
 import styles from "./ResponsiveImageWrapper.module.css";
 
-import Image from "next/image";
+import { CSSProperties } from "react";
+
+import Image, { ImageProps } from "next/image";
 
 type ResponsiveImageWrapperProps = {
   src: string;
   alt: string;
   title?: string;
-  objectFit?: "fill" | "contain" | "cover" | "none" | "scale-down";
+  objectFit?: CSSProperties["objectFit"];
   extraClass?: string;
+  sizes?: string;
+  loading?: ImageProps["loading"];
 };
 
 export default function ResponsiveImageWrapper({
@@ -16,6 +20,8 @@ export default function ResponsiveImageWrapper({
   title,
   objectFit = "cover",
   extraClass,
+  sizes = "100vw",
+  loading = "lazy",
 }: ResponsiveImageWrapperProps) {
   return (
     <div
@@ -28,6 +34,8 @@ export default function ResponsiveImageWrapper({
         title={title ?? alt}
         fill
         style={{ objectFit: `${objectFit}` }}
+        sizes={sizes}
+        loading={loading}
       />
     </div>
   );

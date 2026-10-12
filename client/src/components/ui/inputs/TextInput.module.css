@@ -38,3 +38,19 @@
 .lg {
   padding: 0.75rem 1.5rem;
 }
+
+@media (width <= 680px) {
+  .text_input_wrapper {
+    & label {
+      font-size: 0.875rem;
+    }
+  }
+
+  .text_input {
+    font-size: 0.875rem;
+  }
+
+  .md {
+    padding: 0.5rem;
+  }
+}

@@ -1,4 +1,4 @@
-import RegisterFrom from "@/components/register/RegisterForm";
+import RegisterFrom from "@/components/auth/RegisterForm";
 import ResponsiveImageWrapper from "@/components/ui/images/ResponsiveImageWrapper";
 
 export default function Register() {
@@ -10,6 +10,8 @@ export default function Register() {
         alt="seats"
         title="arena"
         extraClass="auth_page_image"
+        sizes="50vw"
+        loading="eager"
       />
     </>
   );

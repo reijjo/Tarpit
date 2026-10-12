@@ -2,6 +2,7 @@
   /* FONTS */
   --font-body: var(--font-outfit), sans-serif;
   --font-header: var(--font-geist-mono), monospace;
+  --font-header: var(--font-barlow), sans-serif;
   --text-sm: 0.875rem;
   --text-base: 1.125rem;
   --text-lg: 1.25rem;
