@@ -1,8 +1,7 @@
 :root {
   /* FONTS */
   --font-body: var(--font-outfit), sans-serif;
-  --font-header: var(--font-geist-mono), monospace;
-  --font-header: var(--font-barlow), sans-serif;
+  --font-paper: var(--font-paper-mono), monospace;
   --text-sm: 0.875rem;
   --text-base: 1.125rem;
   --text-lg: 1.25rem;
