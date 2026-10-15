@@ -9,7 +9,13 @@
 
   @media (width <= 680px) {
     flex-direction: column;
+    width: max-content;
     align-self: center;
+
+    & a {
+      text-align: left;
+      width: 100%;
+    }
   }
 }
 
