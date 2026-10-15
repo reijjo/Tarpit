@@ -3,7 +3,8 @@ import "../styles/variables.css";
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Barlow_Condensed, Geist_Mono, Outfit } from "next/font/google";
+import { Outfit } from "next/font/google";
+import localFont from "next/font/local";
 
 import Footer from "@/components/layout/footer/Footer";
 import Navbar from "@/components/layout/navbar/Navbar";
@@ -13,15 +14,11 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const barlow = Barlow_Condensed({
-  variable: "--font-barlow",
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+const paperMono = localFont({
+  src: "../fonts/paper-mono/webfonts/PaperMono[wght].woff2",
+  variable: "--font-paper-mono",
+  weight: "100 800",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -31,10 +28,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${outfit.variable} ${geistMono.variable} ${barlow.variable}`}
-    >
+    <html lang="en" className={`${outfit.variable}  ${paperMono.variable}`}>
       <body>
         <Navbar />
         {children}

@@ -24,6 +24,7 @@ export default function LoginForm() {
             inputSize="md"
             type="password"
             placeholder="Your password"
+            autoComplete="off"
           />
           <Button type="submit" size="md">
             Login
