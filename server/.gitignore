@@ -1,0 +1,10 @@
+# Rust
+/target/
+
+# Extra
+.DS_Store
+
+# Secret
+.env
+.env.*
+!.env.example
