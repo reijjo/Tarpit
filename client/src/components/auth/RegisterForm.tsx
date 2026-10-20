@@ -1,5 +1,7 @@
 import styles from "./AuthForm.module.css";
 
+import { MoveRight } from "lucide-react";
+
 import Button from "../ui/button/Button";
 import TextInput from "../ui/inputs/TextInput";
 
@@ -19,8 +21,8 @@ export default function RegisterFrom() {
             inputSize="md"
             placeholder="email@email.com"
           />
-          <Button type="submit" size="md">
-            Continue
+          <Button className={styles.btn_with_icon} type="submit" size="md">
+            <p>Continue</p> <MoveRight size={18} />
           </Button>
         </form>
       </div>
