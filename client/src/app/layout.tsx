@@ -19,6 +19,7 @@ const paperMono = localFont({
   variable: "--font-paper-mono",
   weight: "100 800",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {

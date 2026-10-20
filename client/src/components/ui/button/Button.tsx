@@ -1,5 +1,6 @@
-import type { ComponentProps } from "react";
 import styles from "./Button.module.css";
+
+import type { ComponentProps } from "react";
 
 type ButtonProps = ComponentProps<"button"> & {
   variant?: "cta" | "outline";

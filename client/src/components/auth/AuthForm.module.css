@@ -70,3 +70,14 @@
     }
   }
 }
+
+.btn_with_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  & svg {
+    transform: translateY(1px);
+  }
+}
