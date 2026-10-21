@@ -61,6 +61,13 @@ a {
   }
 }
 
+input[type="text"],
+input[type="password"] {
+  &::placeholder {
+    text-transform: capitalize;
+  }
+}
+
 /* HEADERS */
 h1,
 h2,

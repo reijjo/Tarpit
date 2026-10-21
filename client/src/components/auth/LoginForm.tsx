@@ -10,8 +10,8 @@ export default function LoginForm() {
     >
       <div className={styles.auth_form_content}>
         <div className={styles.form_headers}>
-          <h1>Login</h1>
-          <h2 className="h3-style">Nice to have you here!</h2>
+          <h1 className="h3-style">Login</h1>
+          <h2 className="h6-style">Nice to have you here!</h2>
         </div>
         <form className={styles.auth_form}>
           <TextInput

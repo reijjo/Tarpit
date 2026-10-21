@@ -24,26 +24,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: var(--nav-height);
   gap: 1rem;
   width: min(100%, 400px);
+  border: 1px solid rgb(from var(--primary-light) r g b / 0.5);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
 
   @media (width <= 1000px) {
     border: 1px solid rgb(255 255 255 / 0.25);
     border-radius: var(--radius-md);
     background: linear-gradient(
       to bottom right,
-      rgb(from var(--primary-base) r g b / 0.375),
-      rgb(from var(--primary-xdark) r g b / 0.375)
+      rgb(from var(--primary-base) r g b / 0.5),
+      rgb(from var(--primary-xdark) r g b / 0.5)
     );
     backdrop-filter: blur(16px);
-    padding: 4rem;
-    width: min(600px, 95%);
-    box-shadow: var(--shadow-md);
-  }
-
-  @media (width <= 680px) {
     padding: 2rem;
+    width: min(500px, 100%);
+    gap: 0.5rem;
   }
 }
 
@@ -54,13 +53,28 @@
   text-align: center;
   text-wrap: balance;
   gap: 0.5rem;
+  padding: 2rem 0;
+  background-color: var(--primary-dark);
+  border-bottom: 1px solid rgb(from var(--primary-light) r g b / 0.5);
+
+  width: 100%;
+  @media (width <= 1000px) {
+    background-color: transparent;
+    border-bottom: none;
+    padding: 1rem 0;
+  }
 }
 
 .auth_form {
-  width: min(350px, 100%);
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 1rem 2rem;
+
+  @media (width <= 1000px) {
+    padding: 0;
+  }
 
   & button {
     margin-top: 1rem;
@@ -79,5 +93,19 @@
 
   & svg {
     transform: translateY(1px);
+  }
+}
+
+.btn_group {
+  display: flex;
+  gap: 1rem;
+
+  @media (width <= 480px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  & button {
+    width: 100%;
   }
 }
