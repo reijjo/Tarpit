@@ -5,8 +5,8 @@
   --text-sm: 0.875rem;
   --text-base: 1.125rem;
   --text-lg: 1.25rem;
-  --text-light: var(--secondary);
-  --text-light-muted: rgb(from var(--secondary) r g b / 0.85);
+  --text-light: var(--secondary-base);
+  --text-light-muted: rgb(from var(--secondary-base) r g b / 0.85);
   --text-dark: #04060c;
 
   /* BORDER */
