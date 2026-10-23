@@ -7,7 +7,7 @@ import { registerSchema } from "../validations/auth";
 export const registerUser = async (
   _prevState: RegisterFromState,
   formData: FormData,
-) => {
+): Promise<RegisterFromState> => {
   const validated = registerSchema.safeParse({
     email: formData.get("email"),
     username: formData.get("username"),
@@ -23,6 +23,7 @@ export const registerUser = async (
 
   if (!validated.success) {
     return {
+      success: false,
       errors: z.flattenError(validated.error).fieldErrors,
       values: {
         email: String(formData.get("email") ?? ""),
@@ -32,6 +33,8 @@ export const registerUser = async (
   }
 
   return {
+    success: true,
+    message: "Check your email to verify your account",
     errors: {},
     values: {
       email: validated.data.email,

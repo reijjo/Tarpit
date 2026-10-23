@@ -1,4 +1,6 @@
 export type RegisterFromState = {
+  success: boolean;
+  message?: string;
   errors: {
     email?: string[];
     username?: string[];
@@ -13,6 +15,7 @@ export type RegisterFromState = {
 };
 
 export const initialRegisterState: RegisterFromState = {
+  success: false,
   errors: {},
   values: {
     email: "",
