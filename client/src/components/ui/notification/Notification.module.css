@@ -1,0 +1,52 @@
+.notification {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1rem;
+  text-wrap: balance;
+}
+
+.timer {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: rgb(from currentColor r g b / 0.375);
+  transform: scaleX(1);
+  transform-origin: left;
+  animation: countdown 7s linear forwards;
+}
+
+@keyframes countdown {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timer {
+    display: none;
+  }
+}
+
+.info {
+  border-color: var(--info-xdark);
+  background-color: var(--info-xlight);
+  color: var(--info-xdark);
+}
+.warning {
+  border-color: var(--warning-xdark);
+  background-color: var(--warning-xlight);
+  color: var(--warning-xdark);
+}
+.success {
+  border-color: var(--success-xdark);
+  background-color: var(--success-xlight);
+  color: var(--success-xdark);
+}
+.error {
+  border-color: var(--error-xdark);
+  background-color: var(--error-xlight);
+  color: var(--error-xdark);
+}

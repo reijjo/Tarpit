@@ -54,3 +54,20 @@
     padding: 0.5rem;
   }
 }
+
+.input_error_wrapper {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0.25rem 0.25rem 0.25rem 1.5rem;
+  text-wrap: balance;
+}
+
+.input_error {
+  font-size: 0.925em;
+  color: var(--error-xlight);
+}
+
+.invalid_input {
+  border-color: var(--error-light);
+}
