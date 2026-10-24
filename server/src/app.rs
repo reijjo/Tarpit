@@ -1,8 +1,10 @@
-use crate::middleware::request_logger::request_logger;
-use axum::{Router, routing::get};
+use crate::{features::health, middleware::request_logger::request_logger, state::AppState};
+use axum::Router;
 
 pub fn create_app() -> Router {
-    let app = Router::new().route("/", get(|| async { "Hello world" }));
+    let state = AppState::new();
+
+    let app = Router::new().merge(health::router()).with_state(state);
 
     request_logger(app)
 }
