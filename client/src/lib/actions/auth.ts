@@ -8,16 +8,7 @@ export const registerUser = async (
   _prevState: RegisterFromState,
   formData: FormData,
 ): Promise<RegisterFromState> => {
-  const validated = registerSchema.safeParse({
-    email: formData.get("email"),
-    username: formData.get("username"),
-    password: formData.get("password"),
-    passwordConfirm: formData.get("passwordConfirm"),
-  });
-
-  // 	const validated = registerSchema.safeParse(
-  //   Object.fromEntries(formData),
-  // );
+  const validated = registerSchema.safeParse(Object.fromEntries(formData));
 
   console.log("validated", validated.data);
 

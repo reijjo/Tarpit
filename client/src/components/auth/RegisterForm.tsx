@@ -15,8 +15,6 @@ export default function RegisterFrom() {
     initialRegisterState,
   );
 
-  console.log("stat", state);
-
   return (
     <section
       className={`wrapper ${styles.auth_form_section} ${styles.register_form_section}`}
