@@ -8,6 +8,7 @@
   --text-light: var(--secondary-base);
   --text-light-muted: rgb(from var(--secondary-base) r g b / 0.85);
   --text-dark: #04060c;
+  --text-dark-muted: rgb(from #04060c r g b / 0.85);
 
   /* BORDER */
   --radius-xs: 2px;

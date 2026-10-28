@@ -1,0 +1,25 @@
+info:
+  name: short user
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{baseUrl}}/{{auth}}/register"
+  body:
+    type: json
+    data: |-
+      {
+        "email": "testiukkog@ukko.com",
+        "username": "te",
+        "password": "salasana",
+        "passwordConfirm": "salasana"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,25 @@
+info:
+  name: invalid email
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/{{auth}}/register"
+  body:
+    type: json
+    data: |-
+      {
+        "email": "false_email",
+        "username": "reijjo",
+        "password": "Password_123",
+        "passwordConfirm": "Password_123"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

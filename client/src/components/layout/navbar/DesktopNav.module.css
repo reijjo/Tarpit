@@ -4,6 +4,7 @@
     var(--primary-dark),
     var(--primary-xdark)
   );
+
   display: flex;
   justify-content: space-between;
   align-items: center;

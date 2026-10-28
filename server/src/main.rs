@@ -1,6 +1,7 @@
 mod app;
 mod config;
 mod db;
+mod errors;
 mod features;
 mod middleware;
 mod state;
