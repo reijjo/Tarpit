@@ -1,5 +1,7 @@
 .footer {
   padding-block: 1rem;
   background: var(--primary-base);
-  color: var(--text-light-muted);
+  background: var(--secondary-base);
+  color: var(--text-dark-muted);
+  box-shadow: inset 0 4px 16px rgb(0 0 0 / 0.5);
 }

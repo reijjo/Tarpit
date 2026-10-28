@@ -2,13 +2,15 @@ import * as z from "zod";
 
 export const registerSchema = z
   .object({
-    email: z.email().max(150),
+    email: z
+      .email({ error: "Invalid email." })
+      .max(150, "Max 150 characters in email"),
     username: z
       .string()
       .trim()
       .toLowerCase()
       .min(3, "Min 3 characters in username")
-      .max(30, "max 30 characters in username")
+      .max(30, "Max 30 characters in username")
       .regex(
         /^[a-z0-9_-]+$/,
         "Username can only contain letters, numbers, '-', and '_'",

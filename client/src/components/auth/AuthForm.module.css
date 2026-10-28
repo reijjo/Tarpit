@@ -31,6 +31,7 @@
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   margin-top: var(--nav-height);
+  background-color: var(--primary-xdark);
 
   @media (width <= 1000px) {
     border: 1px solid rgb(255 255 255 / 0.25);
@@ -54,7 +55,7 @@
   text-wrap: balance;
   gap: 0.5rem;
   padding: 2rem 0;
-  background-color: var(--primary-dark);
+  background-color: var(--primary-xxdark);
   border-bottom: 1px solid rgb(from var(--primary-light) r g b / 0.5);
 
   width: 100%;
