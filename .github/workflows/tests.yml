@@ -40,6 +40,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            server -> target
 
       - name: Check formatting
         run: cargo fmt --check
