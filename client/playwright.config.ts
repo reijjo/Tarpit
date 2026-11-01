@@ -26,7 +26,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    baseURL: "http://localhost:3000",
+    baseURL: "http://localhost:3100",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
@@ -71,9 +71,29 @@ export default defineConfig({
   ],
 
   /* Run your local dev server before starting the tests */
-  webServer: {
-    command: "bun run dev",
-    url: "http://localhost:3000",
-    reuseExistingServer: !process.env.CI,
-  },
+  webServer: [
+    {
+      name: "Frontend",
+      command: "bun run dev --port 3100",
+      url: "http://localhost:3100",
+      env: {
+        NEXT_PUBLIC_API_URL: "http://localhost:3101",
+        PLAYWRIGHT: "true",
+      },
+      reuseExistingServer: false,
+    },
+    {
+      name: "Backend",
+      command: "cargo run",
+      cwd: "../server",
+      url: "http://127.0.0.1:3101/ready",
+      env: {
+        APP_ENV: "test",
+        PORT: "3101",
+        FRONTEND_URL: "http://localhost:3100",
+      },
+      reuseExistingServer: false,
+      timeout: 120_000,
+    },
+  ],
 });
