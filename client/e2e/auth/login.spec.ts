@@ -23,10 +23,20 @@ test.describe("Login page", () => {
     }) => {
       await page.goto("/login");
 
-      await page.getByRole("button", { name: "Open menu" }).click();
-      await expect(page.getByRole("link", { name: "Register" })).toBeVisible();
+      const mobileNav = page.getByRole("navigation", {
+        name: "Mobile navigation",
+      });
 
-      await page.getByRole("link", { name: "Register" }).click();
+      await mobileNav.getByRole("button", { name: "Open menu" }).click();
+
+      const registerLink = mobileNav.getByRole("link", {
+        name: "Register",
+        exact: true,
+      });
+
+      await expect(registerLink).toBeVisible();
+      await registerLink.click();
+
       await expect(page).toHaveURL(/\/register$/);
     });
   });

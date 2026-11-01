@@ -1,5 +1,7 @@
 import styles from "./AuthForm.module.css";
 
+import Link from "next/link";
+
 import Button from "@/components/ui/button/Button";
 import TextInput from "@/components/ui/inputs/TextInput";
 
@@ -29,6 +31,12 @@ export default function LoginForm() {
           <Button type="submit" size="md">
             Login
           </Button>
+          <div className={styles.auth_form_footer}>
+            <p>Account missing?</p>
+            <p>Please</p>
+            <Link href="/register">register</Link>
+            <p>first!</p>
+          </div>
         </form>
       </div>
     </section>

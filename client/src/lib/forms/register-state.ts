@@ -1,4 +1,5 @@
 export type RegisterFromState = {
+  notificationId: number;
   success: boolean;
   message?: string;
   errors: {
@@ -15,6 +16,7 @@ export type RegisterFromState = {
 };
 
 export const initialRegisterState: RegisterFromState = {
+  notificationId: 0,
   success: false,
   errors: {},
   values: {

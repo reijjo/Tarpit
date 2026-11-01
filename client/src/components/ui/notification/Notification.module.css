@@ -2,9 +2,9 @@
   position: relative;
   overflow: hidden;
   border: 1px solid;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 0.5rem 1rem;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 .timer {
