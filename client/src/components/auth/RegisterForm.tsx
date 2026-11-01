@@ -3,6 +3,8 @@ import styles from "./AuthForm.module.css";
 
 import { useActionState } from "react";
 
+import Link from "next/link";
+
 import Button from "@/components/ui/button/Button";
 import TextInput from "@/components/ui/inputs/TextInput";
 import Notification from "@/components/ui/notification/Notification";
@@ -68,6 +70,7 @@ export default function RegisterFrom() {
           />
           {state.success && (
             <Notification
+              key={state.notificationId}
               message={state.message ?? "all good"}
               variant="success"
             />
@@ -75,6 +78,7 @@ export default function RegisterFrom() {
 
           {state.errors.form && (
             <Notification
+              key={state.notificationId}
               message={state.errors.form[0] ?? "Please try again"}
               variant="error"
             />
@@ -83,6 +87,11 @@ export default function RegisterFrom() {
           <Button type="submit" size="md" disabled={isPending}>
             <p>{isPending ? "Creating user..." : "Create account"}</p>
           </Button>
+          <div className={styles.auth_form_footer}>
+            <p>Already have an account?</p>
+            <p>Just</p>
+            <Link href="/login">log in!</Link>
+          </div>
         </form>
       </div>
     </section>

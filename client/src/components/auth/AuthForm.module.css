@@ -110,3 +110,16 @@
     width: 100%;
   }
 }
+
+.auth_form_footer {
+  text-align: center;
+  text-wrap: balance;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+
+  & a {
+    text-decoration: underline;
+  }
+}
