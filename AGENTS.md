@@ -28,3 +28,8 @@ Tärpit is a sports betting tracking app. The frontend uses Next.js, React, Type
 ## Testing
 
 - Before changing or adding tests, inspect the relevant implementation and existing tests. Run the relevant checks for the code you change.
+- Keep tests short and simple that does the job. No need to complicate things.
+- Add only a small number of high-value tests for the behavior being changed.
+- Prefer one test per important behavior or risk; avoid redundant boundary permutations and speculative edge cases.
+- Keep test files focused and concise. Don’t add test helpers or infrastructure unless they materially simplify or enable necessary coverage.
+- When adding tests or investigating a vulnerability, modify test files only. If a test fails or a vulnerability is found, report the finding without changing production code. Make production fixes only when explicitly asked.
