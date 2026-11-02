@@ -7,7 +7,7 @@ use validator::Validate;
 
 use crate::{
     errors::{AppError, ErrorDetails},
-    features::auth::services::{create_user, is_email_registered, is_username_registered},
+    features::auth::services::register_user,
     state::AppState,
     types::api_response::ApiResponse,
 };
@@ -59,10 +59,7 @@ pub async fn register_handler(
         }));
     }
 
-    is_email_registered(&state.db, &payload.email).await?;
-    is_username_registered(&state.db, &payload.username).await?;
-
-    create_user(&state.db, &payload).await?;
+    register_user(&state.db, &payload).await?;
 
     Ok((
         StatusCode::CREATED,

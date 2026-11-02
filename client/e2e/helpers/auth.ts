@@ -6,13 +6,32 @@ export const testiukko = {
   password: "TestiUkko123!",
 };
 
-export async function registerUser(page: Page) {
+const defaultRegistration = {
+  email: "register@example.com",
+  username: "registeruser",
+  password: "Register123!",
+  passwordConfirm: "Register123!",
+};
+
+export async function submitRegistration(
+  page: Page,
+  overrides: Partial<typeof defaultRegistration> = {},
+) {
+  const values = { ...defaultRegistration, ...overrides };
   await page.goto("/register");
-
-  await page.getByLabel("Email").fill(testiukko.email);
-  await page.getByLabel("Username").fill(testiukko.username);
-  await page.getByLabel("password", { exact: true }).fill(testiukko.password);
-  await page.getByLabel("Confirm password").fill(testiukko.password);
-
+  await page.locator("form").evaluate((form: HTMLFormElement) => {
+    form.noValidate = true;
+  });
+  await page.getByLabel("email").fill(values.email);
+  await page.getByLabel("username").fill(values.username);
+  await page.getByLabel("password", { exact: true }).fill(values.password);
+  await page.getByLabel("Confirm password").fill(values.passwordConfirm);
   await page.getByRole("button", { name: "Create account" }).click();
+}
+
+export async function registerUser(page: Page) {
+  await submitRegistration(page, {
+    ...testiukko,
+    passwordConfirm: testiukko.password,
+  });
 }

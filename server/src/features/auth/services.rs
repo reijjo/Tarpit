@@ -100,3 +100,13 @@ pub async fn is_username_registered(db: &PgPool, username: &str) -> Result<(), A
 
     Ok(())
 }
+
+pub async fn register_user(db: &PgPool, payload: &RegisterRequest) -> Result<(), AppError> {
+    is_email_registered(db, &payload.email).await?;
+    is_username_registered(db, &payload.username).await?;
+    create_user(db, payload).await?;
+
+    // TODO: Create verification token and send verification email here
+
+    Ok(())
+}
