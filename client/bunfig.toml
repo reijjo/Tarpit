@@ -1,0 +1,4 @@
+[test]
+preload = ["./test-setup.ts"]
+pathIgnorePatterns = ["e2e/**"]
+coverage = true
