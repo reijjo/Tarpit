@@ -19,19 +19,19 @@ pub enum ApiResponse<T> {
 
 #[allow(dead_code)]
 impl<T> ApiResponse<T> {
-    pub fn success(data: T) -> Self {
+    pub fn success(data: T, message: Option<String>) -> Self {
         Self::Success {
             success: true,
             data,
-            message: None,
+            message,
         }
     }
 
-    pub fn error(error: impl Into<String>) -> Self {
+    pub fn error(error: impl Into<String>, message: Option<String>) -> Self {
         Self::Error {
             success: false,
             error: error.into(),
-            message: None,
+            message,
         }
     }
 }

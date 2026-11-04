@@ -1,13 +1,11 @@
-use axum::{Router, routing::post};
-
 use crate::state::AppState;
+use axum::Router;
 
-pub mod handlers;
-pub mod repository;
-pub mod services;
-pub mod types;
-pub mod validators;
+pub mod login;
+pub mod register;
 
 pub fn router() -> Router<AppState> {
-    Router::new().route("/register", post(handlers::register_handler))
+    Router::new()
+        .merge(register::router())
+        .merge(login::router())
 }

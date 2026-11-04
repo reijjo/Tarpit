@@ -3,7 +3,7 @@ use sqlx::PgPool;
 
 use crate::{
     errors::{AppError, ErrorDetails},
-    features::auth::{repository, types::RegisterRequest},
+    features::auth::register::{repository, types::RegisterRequest},
 };
 
 // Creating new user
