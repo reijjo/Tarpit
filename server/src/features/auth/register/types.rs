@@ -5,7 +5,6 @@ use super::validators::{USERNAME_REGEX, validate_password_length, validate_usern
 
 #[derive(Debug, Deserialize, Validate)]
 #[serde(rename_all = "camelCase")]
-#[allow(dead_code)]
 pub struct RegisterRequest {
     #[validate(email(code = "INVALID_EMAIL", message = "Invalid email"))]
     #[validate(length(

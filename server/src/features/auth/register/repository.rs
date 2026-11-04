@@ -1,4 +1,4 @@
-use sqlx::{PgPool, types::uuid};
+use sqlx::PgPool;
 
 pub async fn email_exists(db: &PgPool, email: &str) -> Result<bool, sqlx::Error> {
     sqlx::query_scalar("SELECT EXISTS(SELECT 1 FROM users WHERE LOWER(email) = $1)")
@@ -19,7 +19,7 @@ pub async fn create_user(
     email: &str,
     username: &str,
     password_hash: &str,
-) -> Result<uuid::Uuid, sqlx::Error> {
+) -> Result<i64, sqlx::Error> {
     sqlx::query_scalar(
         "INSERT INTO users (email, username, password_hash)
          VALUES ($1, $2, $3)

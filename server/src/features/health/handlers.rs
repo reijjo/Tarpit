@@ -13,5 +13,5 @@ pub async fn health_handler(State(state): State<AppState>) -> Json<ApiResponse<H
         version: env!("CARGO_PKG_VERSION"),
     };
 
-    Json(ApiResponse::success(data))
+    Json(ApiResponse::success(data, None))
 }

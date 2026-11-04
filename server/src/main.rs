@@ -6,6 +6,7 @@ mod features;
 mod middleware;
 mod state;
 mod types;
+pub mod utils;
 
 use std::io::Result;
 

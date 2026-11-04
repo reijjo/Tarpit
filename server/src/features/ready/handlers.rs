@@ -22,10 +22,13 @@ pub async fn ready_handler(
     match result {
         Ok(Ok(_)) => Ok((
             StatusCode::OK,
-            Json(ApiResponse::success(ReadyResponse {
-                status: "All good.",
-                database: "Connected.",
-            })),
+            Json(ApiResponse::success(
+                ReadyResponse {
+                    status: "All good.",
+                    database: "Connected.",
+                },
+                None,
+            )),
         )),
 
         Ok(Err(error)) => {

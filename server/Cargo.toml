@@ -15,4 +15,5 @@ tokio = { version = "1.53.3", features = ["full"] }
 tower-http = { version = "0.7.1", features = ["trace"] }
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+uuid = { version = "1.29.0", features = ["serde"] }
 validator = { version = "0.21.0", features = ["derive"] }
