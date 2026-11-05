@@ -28,7 +28,7 @@ export default function Hero() {
         <Image
           src="/images/home/crumpled.png"
           loading="eager"
-          alt="Burning Excel sheets"
+          alt="Excel sheets"
           style={{ objectFit: "contain" }}
           fill
         />
