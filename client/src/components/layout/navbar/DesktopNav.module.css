@@ -1,9 +1,6 @@
 .desktop_nav {
-  background: linear-gradient(
-    to bottom right,
-    var(--primary-dark),
-    var(--primary-xdark)
-  );
+  background: rgb(from var(--primary-xxdark) r g b / 0.85);
+  backdrop-filter: blur(8px);
 
   width: min(95%, 1440px);
   margin: 0 auto;
@@ -17,13 +14,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
+  padding-block: 0.75rem;
+  padding-inline: 1.5rem;
 
   box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.5),
+    0 4px 16px rgb(from var(--primary-base) r g b / 0.125),
     inset 0px 2px 4px rgb(from var(--primary-xlight) r g b / 0.125);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   border: 1px solid rgba(255, 255, 255, 0.075);
 
   @media (width <= 680px) {

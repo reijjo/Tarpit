@@ -16,7 +16,8 @@ body {
 body {
   min-height: 100%;
   color: var(--text-light);
-  background: var(--primary-xdark);
+  background: var(--primary-xxdark);
+  background: radial-gradient(ellipse at 50% 50%, #0c2b41 0%, #03111b 100%);
   font-family: var(--font-body);
 
   font-size: var(--text-base);
@@ -36,11 +37,6 @@ body {
 
 main {
   flex-grow: 1;
-  background: radial-gradient(
-    50% 50%,
-    rgb(255 255 255 / 0.125),
-    transparent 90%
-  );
 
   &:not(.homepage, .auth_page) {
     padding-top: var(--nav-height);

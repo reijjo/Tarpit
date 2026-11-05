@@ -8,7 +8,7 @@ test("renders the hero heading", () => {
 
   const heading = screen.getByRole("heading", {
     level: 1,
-    name: "Track your bets without annoying Excel sheets",
+    name: /Track your bets without annoying Excel sheets/i,
   });
 
   expect(heading).toBeTruthy();

@@ -33,9 +33,11 @@ export default function LoginForm() {
           </Button>
           <div className={styles.auth_form_footer}>
             <p>Account missing?</p>
-            <p>Please</p>
-            <Link href="/register">register</Link>
-            <p>first!</p>
+            <div className={styles.auth_form_footer_link}>
+              <p>Please</p>
+              <Link href="/register">register</Link>
+              <p>first!</p>
+            </div>
           </div>
         </form>
       </div>

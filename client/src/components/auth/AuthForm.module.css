@@ -1,7 +1,7 @@
 .auth_form_section {
   display: grid;
   place-items: center;
-  background: radial-gradient(50% 50%, var(--primary-base), transparent 100%);
+  background: radial-gradient(50% 50%, var(--primary-xdark), transparent 100%);
   padding-bottom: 2rem;
 
   @media (width <= 1000px) {
@@ -26,19 +26,19 @@
   justify-content: center;
   align-items: center;
   width: min(100%, 400px);
-  border: 1px solid rgb(from var(--primary-light) r g b / 0.5);
+  border: none;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   margin-top: var(--nav-height);
-  background-color: var(--primary-xdark);
+  background: var(--primary-xdark);
 
   @media (width <= 1000px) {
     border: 1px solid rgb(255 255 255 / 0.25);
     background: linear-gradient(
       to bottom right,
-      rgb(from var(--primary-base) r g b / 0.5),
-      rgb(from var(--primary-xdark) r g b / 0.5)
+      rgb(from var(--primary-xdark) r g b / 0.75),
+      rgb(from var(--primary-xxdark) r g b / 0.75)
     );
     backdrop-filter: blur(16px);
     padding: 2rem;
@@ -54,13 +54,17 @@
   text-align: center;
   text-wrap: balance;
   gap: 0.5rem;
-  padding: 2rem 0;
-  background-color: var(--primary-xxdark);
-  border-bottom: 1px solid rgb(from var(--primary-light) r g b / 0.5);
+  padding: 2rem 0 1rem;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-xxdark),
+    var(--primary-xdark)
+  );
+  /* border-bottom: 1px solid rgb(from var(--primary-light) r g b / 0.5); */
 
   width: 100%;
   @media (width <= 1000px) {
-    background-color: transparent;
+    background: transparent;
     border-bottom: none;
     padding: 1rem 0;
   }
@@ -72,9 +76,11 @@
   flex-direction: column;
   gap: 1rem;
   padding: 1rem 2rem 2rem;
+  background: var(--primary-xdark);
 
   @media (width <= 1000px) {
     padding: 0;
+    background: transparent;
   }
 
   & button {
@@ -114,12 +120,23 @@
 .auth_form_footer {
   text-align: center;
   text-wrap: balance;
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
 
   & a {
     text-decoration: underline;
+    color: var(--accent-xxlight);
+
+    &:hover {
+      color: var(--accent-xlight);
+    }
   }
+}
+
+.auth_form_footer_link {
+  display: flex;
+  gap: 0.25rem;
 }
