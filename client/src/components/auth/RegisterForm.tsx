@@ -89,8 +89,10 @@ export default function RegisterFrom() {
           </Button>
           <div className={styles.auth_form_footer}>
             <p>Already have an account?</p>
-            <p>Just</p>
-            <Link href="/login">log in!</Link>
+            <div className={styles.auth_form_footer_link}>
+              <p>Just</p>
+              <Link href="/login">log in!</Link>
+            </div>
           </div>
         </form>
       </div>

@@ -24,14 +24,17 @@ pub async fn login_handler(
     validate_payload(&payload, "Invalid credentials.")?;
 
     // Check if user exists
+    if payload.login.contains('@') {
+        tracing::info!("Checking if user exists by email: {}", payload.login);
+    } else {
+        tracing::info!("Checking if user exists by username: {}", payload.login);
+    }
 
     // Check if password is ok
 
     // Check if user is verified (COMING LATER AFTER EMAIL VERIFICATION)
 
     // Create session or what?
-
-    print!("Login payload: {:#?}", payload);
 
     let user = User {
         id: 434343,

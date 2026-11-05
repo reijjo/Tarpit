@@ -23,10 +23,11 @@
   --shadow-lg: 0 8px 24px rgb(0 0 0 / 0.25), 0 16px 48px rgb(0 0 0 / 0.2);
 
   /* HEIGHTS */
-  --nav-height: 75px;
+  --nav-height: 85px;
 
   /* BACKGROUND */
-  --bg: radial-gradient(50% 50%, rgb(255 255 255 / 0.125), transparent 90%);
+  /* --bg: radial-gradient(50% 50%, rgb(255 255 255 / 0.125), transparent 90%); */
+  --bg: radial-gradient(50% 50%, var(--primary-light), var(--primary-xxdark));
 
   /* COLORS */
   /* primary */
@@ -37,6 +38,14 @@
   --primary-dark: #2650a7;
   --primary-xdark: #244584;
   --primary-xxdark: #14213d;
+
+  --primary-xxlight: #bae5fd;
+  --primary-xlight: #7dd1fc;
+  --primary-light: #38baf8;
+  --primary-base: #0ea1e9;
+  --primary-dark: hsl(203, 80%, 24%);
+  --primary-xdark: hsl(204, 80%, 18%);
+  --primary-xxdark: hsl(205, 80%, 6%);
 
   /* secondary */
   --secondary-light: #faf7f2;
@@ -92,6 +101,18 @@
   --primary-800: #2650a7;
   --primary-900: #244584;
   --primary-950: #14213d;
+
+  --primary-50: #f0f9ff;
+  --primary-100: #e0f2fe;
+  --primary-200: #bae5fd;
+  --primary-300: #7dd1fc;
+  --primary-400: #38baf8;
+  --primary-500: #0ea1e9;
+  --primary-600: #0281c7;
+  --primary-700: #0366a1;
+  --primary-800: #075785;
+  --primary-900: #0c486e;
+  --primary-950: #03111b;
 
   --secondary: #f5f1e8;
 

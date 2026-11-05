@@ -3,6 +3,7 @@ use axum::{Router, routing::post};
 use crate::state::AppState;
 
 pub mod handlers;
+pub mod repository;
 pub mod types;
 
 pub fn router() -> Router<AppState> {
