@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1000 1000">
+  <title>Minimal origami fish logo outline</title>
+  <g fill="none" stroke="#38baf8" stroke-width="11" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 119 543 L 355 329 L 612 171 L 573 388 L 721 521 L 888 343 L 852 554 L 887 781 L 722 644 L 585 707 L 613 862 L 480 735 L 350 754 Z"/>
+    <path d="M 355 329 L 426 545 L 350 754"/>
+    <path d="M 355 329 L 721 521 L 585 707 L 350 754"/>
+    <path d="M 721 521 L 852 554 L 722 644"/>
+  </g>
+  <circle cx="321" cy="521" r="19" fill="#38baf8"/>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1280" viewBox="0 0 1280 1280" role="img" aria-labelledby="title desc">
+<title id="title">Tärpit origami fish — blue full-color logo</title>
+<desc id="desc">Layered geometric blue origami fish with delicate shaded paper folds, a glossy eye and a pink cheek, on transparent background.</desc>
+<defs>
+  <linearGradient id="finBottom" x1=".1" y1="0" x2=".85" y2="1" objectBoundingBox="true"><stop stop-color="#34c5fc"/><stop offset=".5" stop-color="#10a6ed"/><stop offset="1" stop-color="#0789d4"/></linearGradient>
+  <linearGradient id="dorsal" x1=".22" y1=".1" x2=".9" y2="1" objectBoundingBox="true"><stop stop-color="#42caff"/><stop offset=".6" stop-color="#1eb6f4"/><stop offset="1" stop-color="#0089cf"/></linearGradient>
+  <linearGradient id="dorsalFold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#007ebc"/><stop offset="1" stop-color="#09527e"/></linearGradient>
+  <linearGradient id="back" x1=".18" y1=".1" x2=".8" y2="1"><stop stop-color="#0575b0"/><stop offset="1" stop-color="#064974"/></linearGradient>
+  <linearGradient id="tailTop" x1=".1" y1="0" x2="1" y2=".7"><stop stop-color="#45c8ff"/><stop offset="1" stop-color="#15a3e9"/></linearGradient>
+  <linearGradient id="tailLower" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#0d83c9"/><stop offset=".35" stop-color="#0aa9f0"/><stop offset="1" stop-color="#078ad2"/></linearGradient>
+  <linearGradient id="head" x1=".05" y1="0" x2="1" y2="1"><stop stop-color="#45caff"/><stop offset=".7" stop-color="#32bffa"/><stop offset="1" stop-color="#21a5eb"/></linearGradient>
+  <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#40c5fa"/><stop offset=".55" stop-color="#30b9f4"/><stop offset="1" stop-color="#159fe7"/></linearGradient>
+  <linearGradient id="leftFold" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#0b91d0"/><stop offset="1" stop-color="#09a5e9"/></linearGradient>
+  <linearGradient id="eye" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#002b46"/><stop offset=".65" stop-color="#054366"/><stop offset="1" stop-color="#002339"/></linearGradient>
+  <linearGradient id="cheek" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#ff96ac"/><stop offset="1" stop-color="#fa7897"/></linearGradient>
+  <filter id="foldShadow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="4"/></filter>
+</defs>
+<!-- A genuinely vector-defined logo: shapes and gradients, no embedded bitmap -->
+<g stroke-linejoin="round" stroke-linecap="round">
+  <!-- bottom fin -->
+  <path d="M329 941 L609 869 L688 1073 Z" fill="url(#finBottom)" stroke="#0786bc" stroke-opacity=".25" stroke-width="2"/>
+  <!-- dorsal fin and dark folded underside -->
+  <path d="M398 409 L753 241 L685 476 L837 642 L660 566 Z" fill="url(#dorsal)" stroke="#0886bb" stroke-opacity=".35" stroke-width="2"/>
+  <path d="M400 406 L692 463 L673 546 Z" fill="url(#dorsalFold)" opacity=".94"/>
+  <path d="M692 464 L839 644 L673 546 Z" fill="url(#back)"/>
+  <!-- main underside -->
+  <path d="M398 409 L843 642 L782 766 L715 857 L333 944 Z" fill="url(#back)"/>
+  <!-- tail fin, behind main folded body -->
+  <path d="M761 759 L843 644 L1138 401 L1085 662 L1060 729 L1133 1019 L778 771 Z" fill="url(#tailLower)" stroke="#067eb6" stroke-opacity=".3" stroke-width="2"/>
+  <path d="M779 769 L843 644 L1138 402 L1084 664 Z" fill="url(#tailTop)"/>
+  <path d="M779 769 L1084 664 L1133 1019 Z" fill="url(#tailLower)"/>
+  <path d="M779 771 L1084 665" fill="none" stroke="#056eaa" stroke-opacity=".38" stroke-width="3"/>
+  <path d="M845 645 L1137 405 L1084 662" fill="none" stroke="#b1f1ff" stroke-opacity=".5" stroke-width="2"/>
+  <path d="M1061 730 L1132 1017" fill="none" stroke="#78dffc" stroke-opacity=".5" stroke-width="2"/>
+  <!-- paper body: blue triangular foreground -->
+  <path d="M402 405 L842 645 L714 857 L333 943 L467 724 Z" fill="url(#body)" stroke="#0a85b5" stroke-opacity=".24" stroke-width="2"/>
+  <!-- a long folded shade from upper corner -->
+  <path d="M402 405 L608 884 L333 941 L466 725 Z" fill="url(#leftFold)" opacity=".91"/>
+  <!-- lower-side edge light -->
+  <path d="M334 942 L711 857" fill="none" stroke="#6bdbfe" stroke-opacity=".67" stroke-width="2.5"/>
+  <!-- head / origami folded face -->
+  <path d="M112 707 L402 406 L466 724 L332 943 Z" fill="url(#head)" stroke="#078cba" stroke-opacity=".32" stroke-width="2.5"/>
+  <path d="M112 707 L402 406" stroke="#a9edff" stroke-opacity=".75" stroke-width="2.5"/>
+  <path d="M112 707 L331 943" stroke="#0489bd" stroke-opacity=".4" stroke-width="2.5"/>
+  <path d="M402 407 L466 724 L332 943" fill="none" stroke="#0c8cbb" stroke-opacity=".26" stroke-width="2"/>
+  <!-- eye -->
+  <circle cx="310" cy="656" r="46" fill="url(#eye)"/>
+  <circle cx="302" cy="639" r="17" fill="#ffffff"/>
+  <circle cx="285" cy="667" r="6" fill="#66bddb" opacity=".7"/>
+  <!-- blush -->
+  <ellipse cx="364" cy="726" rx="44" ry="28" fill="url(#cheek)"/>
+</g>
+</svg>

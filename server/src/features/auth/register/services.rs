@@ -6,7 +6,56 @@ use crate::{
     features::auth::register::{repository, types::RegisterRequest},
 };
 
+// ---------------------------------------
+// Duplicate checks
+// ---------------------------------------
+
+pub async fn is_email_registered(db: &PgPool, email: &str) -> Result<(), AppError> {
+    let email_exists = repository::email_exists(db, email).await.map_err(|error| {
+        tracing::error!("Email lookup failed: {error}");
+
+        AppError::Internal(ErrorDetails {
+            error: "DATABASE_ERROR".to_string(),
+            message: Some("Unable to process registration.".to_string()),
+        })
+    })?;
+
+    if email_exists {
+        return Err(AppError::Conflict(ErrorDetails {
+            error: "EMAIL_ALREADY_EXISTS".to_string(),
+            message: Some("Email is already registered.".to_string()),
+        }));
+    }
+
+    Ok(())
+}
+
+pub async fn is_username_registered(db: &PgPool, username: &str) -> Result<(), AppError> {
+    let username_exists = repository::username_exists(db, username)
+        .await
+        .map_err(|error| {
+            tracing::error!("Username lookup failed: {error}");
+
+            AppError::Internal(ErrorDetails {
+                error: "DATABASE_ERROR".to_string(),
+                message: Some("Unable to process registration.".to_string()),
+            })
+        })?;
+
+    if username_exists {
+        return Err(AppError::Conflict(ErrorDetails {
+            error: "USERNAME_ALREADY_EXISTS".to_string(),
+            message: Some("Username is already registered.".to_string()),
+        }));
+    }
+
+    Ok(())
+}
+
+// ---------------------------------------
 // Creating new user
+// ---------------------------------------
+
 pub async fn hash_password(password: &str) -> Result<String, AppError> {
     let password = password.to_owned();
 
@@ -54,49 +103,6 @@ pub async fn create_user(db: &PgPool, payload: &RegisterRequest) -> Result<(), A
                 message: Some("Unable to complete registration.".to_string()),
             })
         })?;
-
-    Ok(())
-}
-
-// Duplicate checks
-pub async fn is_email_registered(db: &PgPool, email: &str) -> Result<(), AppError> {
-    let email_exists = repository::email_exists(db, email).await.map_err(|error| {
-        tracing::error!("Email lookup failed: {error}");
-
-        AppError::Internal(ErrorDetails {
-            error: "DATABASE_ERROR".to_string(),
-            message: Some("Unable to process registration.".to_string()),
-        })
-    })?;
-
-    if email_exists {
-        return Err(AppError::Conflict(ErrorDetails {
-            error: "EMAIL_ALREADY_EXISTS".to_string(),
-            message: Some("Email is already registered.".to_string()),
-        }));
-    }
-
-    Ok(())
-}
-
-pub async fn is_username_registered(db: &PgPool, username: &str) -> Result<(), AppError> {
-    let username_exists = repository::username_exists(db, username)
-        .await
-        .map_err(|error| {
-            tracing::error!("Username lookup failed: {error}");
-
-            AppError::Internal(ErrorDetails {
-                error: "DATABASE_ERROR".to_string(),
-                message: Some("Unable to process registration.".to_string()),
-            })
-        })?;
-
-    if username_exists {
-        return Err(AppError::Conflict(ErrorDetails {
-            error: "USERNAME_ALREADY_EXISTS".to_string(),
-            message: Some("Username is already registered.".to_string()),
-        }));
-    }
 
     Ok(())
 }
