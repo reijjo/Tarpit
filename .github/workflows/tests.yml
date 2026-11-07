@@ -33,6 +33,7 @@ jobs:
       PORT: 3001
       FRONTEND_URL: http://localhost:3000
       TEST_DATABASE_URL: postgres://tarpit:testpassword@127.0.0.1:5433/tarpit_test
+      SESSION_COOKIE_SECURE: false
 
     services:
       postgres:
@@ -99,6 +100,7 @@ jobs:
       PORT: 3101
       FRONTEND_URL: http://localhost:3100
       TEST_DATABASE_URL: postgres://tarpit:testpassword@127.0.0.1:5433/tarpit_test
+      SESSION_COOKIE_SECURE: false
 
     defaults:
       run:

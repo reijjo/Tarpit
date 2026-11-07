@@ -6,8 +6,10 @@ use crate::{
 };
 use axum::Router;
 use sqlx::PgPool;
+use tower_sessions::SessionManagerLayer;
+use tower_sessions_sqlx_store::PostgresStore;
 
-pub fn create_app(pool: PgPool) -> Router {
+pub fn create_app(pool: PgPool, session_layer: SessionManagerLayer<PostgresStore>) -> Router {
     let state = AppState::new(pool);
 
     let api = Router::new().nest("/auth", auth::router());
@@ -17,7 +19,8 @@ pub fn create_app(pool: PgPool) -> Router {
         .merge(ready::router())
         .nest("/api/v1", api)
         .fallback(unkown_endpoint)
-        .with_state(state);
+        .with_state(state)
+        .layer(session_layer);
 
     request_logger(app)
 }
