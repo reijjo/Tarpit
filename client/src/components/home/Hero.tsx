@@ -37,7 +37,7 @@ export default function Hero() {
         />
       </div>
       <div className={styles.hero_check_features}>
-        <p>See how it works</p>
+        <p>Scroll down to see how it works</p>
         <ChevronDown />
       </div>
     </section>

@@ -4,6 +4,7 @@ pub struct Config {
     pub host: String,
     pub port: u16,
     pub database_url: String,
+    pub session_cookie_secure: bool,
 }
 
 impl Config {
@@ -25,10 +26,16 @@ impl Config {
             env::var("DATABASE_URL").expect("DATABASE_URL must be set")
         };
 
+        let session_cookie_secure = env::var("SESSION_COOKIE_SECURE")
+            .unwrap_or_else(|_| "true".to_string())
+            .parse::<bool>()
+            .expect("SESSION_COOKIE_SECURE must be true of false");
+
         Self {
             host,
             port,
             database_url,
+            session_cookie_secure,
         }
     }
 

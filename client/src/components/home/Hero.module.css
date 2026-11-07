@@ -109,6 +109,9 @@
   transform: translateX(-50%);
   color: var(--primary-xxlight);
   font-size: 1.25rem;
+  width: 90%;
+  text-wrap: balance;
+  text-align: center;
 }
 
 .hero_check_features p {
