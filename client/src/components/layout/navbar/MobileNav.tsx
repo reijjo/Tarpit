@@ -3,6 +3,7 @@ import styles from "./MobileNav.module.css";
 
 import { useState } from "react";
 
+import Image from "next/image";
 import Link from "next/link";
 
 import { Menu, X } from "lucide-react";
@@ -20,6 +21,9 @@ export default function MobileNav() {
 
   return (
     <nav className={styles.mobile_nav} aria-label="Mobile navigation">
+      <Link href="/" className={styles.nav_logo} onClick={closeMenu}>
+        <Image src="/logo.svg" alt="Tärpit logo" width={44} height={44} />
+      </Link>
       <button
         type="button"
         className={styles.mobile_nav_btn}

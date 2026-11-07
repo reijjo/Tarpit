@@ -25,6 +25,9 @@ const paperMono = localFont({
 export const metadata: Metadata = {
   title: "Tärpit - Betting tracker",
   description: "Track your bets without annoying Excel sheets",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

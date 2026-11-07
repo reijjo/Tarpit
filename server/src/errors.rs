@@ -11,11 +11,12 @@ pub struct ErrorDetails {
 
 #[allow(dead_code)]
 pub enum AppError {
-    Internal(ErrorDetails),           // 500
     BadRequest(ErrorDetails),         // 400
+    Unauthorized(ErrorDetails),       // 401
     NotFound(ErrorDetails),           // 404
-    ServiceUnavailable(ErrorDetails), // 503
     Conflict(ErrorDetails),           // 409
+    Internal(ErrorDetails),           // 500
+    ServiceUnavailable(ErrorDetails), // 503
 }
 
 impl IntoResponse for AppError {
@@ -26,6 +27,7 @@ impl IntoResponse for AppError {
             Self::NotFound(details) => (StatusCode::NOT_FOUND, details),
             Self::ServiceUnavailable(details) => (StatusCode::SERVICE_UNAVAILABLE, details),
             Self::Conflict(details) => (StatusCode::CONFLICT, details),
+            Self::Unauthorized(details) => (StatusCode::UNAUTHORIZED, details),
         };
 
         (

@@ -4,6 +4,7 @@ use crate::state::AppState;
 
 pub mod handlers;
 pub mod repository;
+pub mod services;
 pub mod types;
 
 pub fn router() -> Router<AppState> {
