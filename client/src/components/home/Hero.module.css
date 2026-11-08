@@ -78,8 +78,8 @@
     gap: 1rem;
   }
 
-  @media (width < 1200px) {
-    margin-inline: auto;
+  @media (width < 1000px) {
+    align-self: center;
   }
 
   @media (width < 480px) {

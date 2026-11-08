@@ -91,8 +91,11 @@ export default defineConfig({
       url: "http://127.0.0.1:3101/ready",
       env: {
         APP_ENV: "test",
+        HOST: "127.0.0.1",
         PORT: "3101",
         FRONTEND_URL: "http://localhost:3100",
+        TEST_DATABASE_URL: process.env.TEST_DATABASE_URL!,
+        SESSION_COOKIE_SECURE: "false",
       },
       reuseExistingServer: false,
       timeout: 120_000,

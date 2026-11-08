@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 
 type LinkButtonProps = LinkProps &
   Omit<ComponentProps<"a">, keyof LinkProps> & {
-    variant?: "cta" | "outline";
+    variant?: "cta" | "outline" | "danger";
     size?: "sm" | "md" | "lg";
     href: LinkProps["href"];
   };
