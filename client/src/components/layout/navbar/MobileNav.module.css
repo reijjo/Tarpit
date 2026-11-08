@@ -5,7 +5,7 @@
   width: 100%;
   height: var(--nav-height);
 
-  @media (width <= 680px) {
+  @media (width <= 900px) {
     display: grid;
     place-items: center;
     align-items: center;
@@ -13,9 +13,7 @@
 }
 
 .mobile_nav_btn {
-  height: 100%;
-  width: 100%;
-  background: rgb(255 255 255 / 0.05);
+  background: rgb(from var(--primary-xxdark) r g b / 0.8);
   z-index: 15;
   position: absolute;
 
@@ -31,26 +29,39 @@
   color: white;
   display: grid;
   place-items: center;
-  border: 1px solid rgb(from var(--secondary-light) r g b / 0.15);
-  box-shadow: var(--shadow-md);
+  border: 1px solid rgb(from var(--secondary-light) r g b / 0.18);
+  box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
 
-  &:hover {
-    box-shadow: var(--shadow-lg);
-    background: rgb(255 255 255 / 0.075);
+  &:hover,
+  &:focus-visible {
+    color: var(--primary-xxlight);
+    border-color: rgb(from var(--primary-xxlight) r g b / 0.65);
+    box-shadow: var(--shadow-md);
+    background: rgb(from var(--primary-dark) r g b / 0.12);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-xxlight);
+    outline-offset: 3px;
   }
 }
 
 .nav_open {
   position: fixed;
   inset: 0;
+  z-index: 11;
   width: 100vw;
   min-height: 100dvh;
+  box-sizing: border-box;
+  overflow-y: auto;
   background-color: rgb(from var(--primary-xxdark) r g b / 0.95);
   backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 2rem;
 
   /* closed state */
   opacity: 0;
@@ -58,22 +69,129 @@
   pointer-events: none;
   min-height: 0;
 
-  transition: all 0.125s ease;
+  transition:
+    opacity 0.16s ease,
+    visibility 0.16s;
 }
 
 .nav_open.is_open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  min-height: 100dvh;
-  transition: all 0.125s ease;
+}
+
+.mobile_links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: min(10rem, 100%);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+}
+
+.mobile_links a,
+.mobile_links button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  text-align: left;
+  text-decoration: none;
+}
+
+.mobile_links button {
+  border: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobile_links a:hover,
+.mobile_links a:focus-visible,
+.mobile_links button:hover,
+.mobile_links button:focus-visible {
+  color: var(--text-light);
+  background-color: rgb(from var(--primary-dark) r g b / 0.8);
+}
+
+.mobile_links a:focus-visible,
+.mobile_links button:focus-visible {
+  outline: 2px solid var(--accent-base);
+  outline-offset: -2px;
+}
+
+.extra_links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgb(from var(--secondary-light) r g b / 0.2);
+}
+
+.extra_links .logout_button {
+  text-transform: uppercase;
+}
+
+.extra_links .logout_button:hover,
+.extra_links .logout_button:focus-visible {
+  color: var(--error-xdark);
+  background-color: var(--error-xlight);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav_open,
+  .mobile_nav_btn,
+  .mobile_links a,
+  .mobile_links button {
+    transition: none;
+  }
 }
 
 .nav_logo {
+  z-index: 15;
   position: absolute;
   top: 1rem;
   left: 1rem;
   height: 44px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--text-light);
+  font-size: var(--text-base);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
+.nav_logo:hover {
+  color: var(--text-light);
+}
+
+.mobile_menu_copy {
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  left: 1rem;
+  box-sizing: border-box;
+  color: rgb(from var(--primary-xxlight) r g b / 0.5);
+  border-top: 1px solid rgb(from var(--primary-xxlight) r g b / 0.5);
+  padding: 0.75rem 0 1rem;
+  display: flex;
+  font-size: var(--text-sm);
+}
+
+.nav_icon {
+  display: none;
+  @media (width <= 900px) {
+    display: flex;
+  }
+}
+
+.nav_links .link_wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
