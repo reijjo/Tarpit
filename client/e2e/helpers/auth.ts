@@ -34,4 +34,25 @@ export async function registerUser(page: Page) {
     ...testiukko,
     passwordConfirm: testiukko.password,
   });
+  await page.getByText(/check your email/i).waitFor();
+}
+
+const defaultLogin = {
+  login: testiukko.username,
+  password: testiukko.password,
+};
+
+export async function submitLogin(
+  page: Page,
+  overrides: Partial<typeof defaultLogin> = {},
+) {
+  const values = { ...defaultLogin, ...overrides };
+  await page.goto("/login");
+  await page.getByLabel("Username/Email").fill(values.login);
+  await page.getByLabel("Password").fill(values.password);
+  await page.getByRole("button", { name: "Login" }).click();
+}
+
+export async function loginUser(page: Page) {
+  await submitLogin(page);
 }
