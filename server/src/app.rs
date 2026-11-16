@@ -1,6 +1,6 @@
 use crate::{
     errors::unkown_endpoint,
-    features::{auth, health, ready},
+    features::{auth, bets, health, ready},
     middleware::request_logger::request_logger,
     state::AppState,
 };
@@ -12,7 +12,9 @@ use tower_sessions_sqlx_store::PostgresStore;
 pub fn create_app(pool: PgPool, session_layer: SessionManagerLayer<PostgresStore>) -> Router {
     let state = AppState::new(pool);
 
-    let api = Router::new().nest("/auth", auth::router());
+    let api = Router::new()
+        .nest("/auth", auth::router())
+        .nest("/bets", bets::router());
 
     let app = Router::new()
         .merge(health::router())

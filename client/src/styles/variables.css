@@ -44,8 +44,8 @@
   --primary-light: #38baf8;
   --primary-base: #0ea1e9;
   --primary-dark: hsl(203, 80%, 24%);
-  --primary-xdark: hsl(204, 80%, 18%);
-  --primary-xxdark: hsl(205, 80%, 6%);
+  --primary-xdark: rgb(9, 53, 83);
+  --primary-xxdark: rgb(3, 17, 28);
 
   /* secondary */
   --secondary-light: #faf7f2;

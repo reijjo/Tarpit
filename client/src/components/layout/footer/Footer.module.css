@@ -1,7 +1,50 @@
 .footer {
-  padding-block: 1rem;
-  background: var(--primary-base);
-  background: var(--secondary-base);
-  color: var(--text-dark-muted);
   box-shadow: inset 0 4px 16px rgb(0 0 0 / 0.5);
+  display: flex;
+  flex-direction: column;
+  background: #03111c; /* solid fallback matching your primary */
+  border-top: 1px solid rgb(from var(--primary-light) r g b / 0.375);
+}
+
+.footer_content_wrapper {
+  display: flex;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-xdark),
+    var(--primary-xxdark) 70%
+  );
+  padding-block: 2rem;
+  /* optional: add a bit more height if you want more text space */
+}
+
+.footer_image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/1;
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--primary-xxdark), transparent);
+
+  & img {
+    object-fit: contain;
+  }
+}
+
+.footer_copy {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding-inline: 1rem;
+
+  & p {
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(8px);
+    padding: 0.5rem 1rem;
+    width: max-content;
+    align-self: flex-start;
+  }
 }

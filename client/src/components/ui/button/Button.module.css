@@ -26,6 +26,8 @@
 
   color: var(--text-dark);
   box-shadow:
+    0 -4px 16px rgb(from var(--accent-base) r g b / 0.25),
+    var(--shadow-sm),
     inset 0 -1px var(--accent-base),
     inset 0 1px var(--accent-xlight);
 
@@ -54,6 +56,8 @@
 
   color: var(--text-light);
   box-shadow:
+    0 -4px 16px rgb(from var(--error-base) r g b / 0.25),
+    var(--shadow-sm),
     inset 0 -1px var(--error-xdark),
     inset 0 1px var(--error-base);
 
@@ -81,6 +85,8 @@
   backdrop-filter: blur(8px);
   color: var(--text-light);
   box-shadow:
+    0 -4px 16px rgb(255 255 255 / 0.075),
+    var(--shadow-sm),
     inset 0 -1px rgb(0 0 0 / 0.125),
     inset 0 1px rgb(255 255 255 / 0.125);
 

@@ -8,30 +8,6 @@ use validator::Validate;
 use super::validators::{validate_bet_leg, validate_decimal, validate_name_length};
 
 // -------------------
-// Bet categories
-// -------------------
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct BetCategory {
-    pub id: i64,
-    pub name: String,
-}
-
-#[derive(Validate, Deserialize, Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct BetCategoryRequest {
-    #[validate(custom(function = "validate_name_length"))]
-    pub name: String,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct UserCategory {
-    pub user_id: i64,
-    pub category_id: i64,
-}
-
-// -------------------
 // Bookmaker
 // -------------------
 #[derive(Debug, Serialize, Deserialize)]
@@ -159,15 +135,23 @@ pub struct BetRequest {
 // -------------------
 // Bet legs
 // -------------------
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Validate)]
 #[serde(rename_all = "camelCase")]
 pub struct BetSelection {
+    #[validate(length(min = 1, code = "INVALID_SELECTION_ID", message = "Selection problems"))]
     pub id: String,
+
+    #[validate(length(
+        min = 1,
+        max = 100,
+        code = "INVALID_SELECTION",
+        message = "Selection msut be between 1 and 100 characters"
+    ))]
     pub selection: String,
     pub result: Option<BetStatus>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Validate)]
 #[serde(rename_all = "camelCase")]
 pub struct BetLeg {
     pub id: i64,
@@ -179,6 +163,8 @@ pub struct BetLeg {
     pub livebet: bool,
     pub odds: Decimal,
     pub bet_type: BetType,
+
+    #[validate(nested)]
     pub selections: Vec<BetSelection>,
     pub home_result: Option<i32>,
     pub away_result: Option<i32>,
