@@ -1,15 +1,12 @@
 import styles from "./Hero.module.css";
 
-import Image from "next/image";
-
-import { ChevronDown } from "lucide-react";
-
 import LinkButton from "../ui/button/LinkButton";
+import Pile from "./Pile";
 
 export default function Hero() {
   return (
-    <section className={`${styles.hero_section} wrapper`}>
-      <div className={styles.hero_content}>
+    <section className={styles.hero_section}>
+      <div className={`${styles.hero_content} wrapper`}>
         <h1>
           Track your bets without annoying <span>Excel sheets</span>.
         </h1>
@@ -19,27 +16,16 @@ export default function Hero() {
         </p>
         <div className={styles.hero_cta}>
           <LinkButton href="/register" size="md">
-            Start here!
+            Register here
           </LinkButton>
           <LinkButton href="/tips" size="md" variant="outline">
             Check betting tips
           </LinkButton>
         </div>
       </div>
-      <div className={styles.hero_image_wrapper}>
-        <Image
-          src="/images/home/crumpled.png"
-          loading="eager"
-          alt="Excel sheets"
-          sizes="(min-width: 1000px) 50vw, 0px"
-          style={{ objectFit: "contain" }}
-          fill
-        />
-      </div>
-      <div className={styles.hero_check_features}>
-        <p>Scroll down to see how it works</p>
-        <ChevronDown />
-      </div>
+
+      <Pile side="left" />
+      <Pile side="right" />
     </section>
   );
 }

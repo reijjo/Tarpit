@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 use sqlx::types::Decimal;
+use std::collections::HashSet;
 use validator::ValidationError;
 
 use crate::features::bets::types::{BetLegRequest, BetType};
@@ -37,6 +38,16 @@ pub fn validate_bet_leg(leg: &BetLegRequest) -> Result<(), ValidationError> {
         let mut error = ValidationError::new("INVALID_SELECTIONS");
         error.message = Some("Invalid number of selections".into());
         return Err(error);
+    }
+
+    let mut ids = HashSet::new();
+
+    for selection in &leg.selections {
+        if !ids.insert(&selection.id) {
+            let mut error = ValidationError::new("DUPLICATE_SELECTION_ID");
+            error.message = Some("Selections must have unique IDs".into());
+            return Err(error);
+        }
     }
 
     Ok(())

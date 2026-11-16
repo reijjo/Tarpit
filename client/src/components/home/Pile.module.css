@@ -1,0 +1,33 @@
+.pile {
+  --k: 1; /* koko ja vaakasijainti */
+  --ky: 1; /* pystyvenytys */
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  translate: 0 calc(6vw * var(--k)); /* nosta lukua = kasa alemmas */
+}
+
+.ball {
+  position: absolute;
+  left: var(--x);
+  bottom: var(--y);
+  width: var(--s);
+  height: auto;
+  z-index: var(--z);
+  transform: translateX(-50%) rotate(var(--r));
+  filter: brightness(var(--b)) drop-shadow(0 12px 20px rgb(0 0 0 / 0.5));
+}
+
+@media (max-width: 700px) {
+  .pile {
+    --k: 1.25;
+    --ky: 1.5;
+  }
+}
+
+@media (max-width: 420px) {
+  .pile {
+    --k: 1.25;
+    --ky: 1.5;
+  }
+}

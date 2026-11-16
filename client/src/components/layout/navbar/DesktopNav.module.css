@@ -41,3 +41,9 @@
     flex-direction: column;
   }
 }
+
+.nav_links .link_wrapper {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}

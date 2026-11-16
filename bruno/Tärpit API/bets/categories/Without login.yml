@@ -1,0 +1,21 @@
+info:
+  name: Without login
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/{{bets}}/categories"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: const logout = await bru.runRequest("auth/login/logout");
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

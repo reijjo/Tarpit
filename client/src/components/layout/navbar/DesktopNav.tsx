@@ -33,8 +33,8 @@ export default function DesktopNav({ user, closeMenu }: DesktopNavProps) {
             onClick={signOut}
             className={styles.link_wrapper}
           >
-            <LogOut />
             <p>Logout</p>
+            <LogOut size={16} strokeWidth={2} />
           </LinkButton>
         ) : (
           <>

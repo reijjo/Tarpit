@@ -15,7 +15,12 @@
   border: 2px solid var(--primary-xdark);
   border-radius: var(--radius-lg);
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.95rem;
+
+  &::placeholder {
+    font-size: 0.95em;
+    opacity: 0.9;
+  }
 
   &:hover {
     border-color: var(--primary-base);

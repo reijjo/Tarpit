@@ -1,17 +1,16 @@
 info:
-  name: login with email
+  name: create too long
   type: http
   seq: 4
 
 http:
   method: POST
-  url: "{{baseUrl}}/{{auth}}/login"
+  url: "{{baseUrl}}/{{bets}}/categories"
   body:
     type: json
     data: |-
       {
-        "login": "repe",
-        "password": "salasana"
+        "name": ""
       }
   auth: inherit
 

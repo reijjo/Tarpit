@@ -1,0 +1,21 @@
+info:
+  name: Without login
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{baseUrl}}/{{bets}}/bookmakers"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: const logout = await bru.runRequest("auth/login/logout");
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
