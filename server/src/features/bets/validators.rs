@@ -3,7 +3,8 @@ use sqlx::types::Decimal;
 use std::collections::HashSet;
 use validator::ValidationError;
 
-use crate::features::bets::types::{BetLegRequest, BetType};
+use super::enums::BetType;
+use crate::features::bets::types::BetLegRequest;
 
 pub fn validate_name_length(name: &str) -> Result<(), ValidationError> {
     let length = name.trim().chars().count();

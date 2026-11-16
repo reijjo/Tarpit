@@ -61,6 +61,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+// -----------------
+// Shutdown
+// -----------------
 async fn shutdown_signal(deletion_task_abort_handle: AbortHandle) {
     let ctrl_c = async {
         signal::ctrl_c()

@@ -5,84 +5,13 @@ use serde::{Deserialize, Serialize};
 use sqlx::types::Decimal;
 use validator::Validate;
 
+use super::enums::{BetStatus, BetType, FinalType};
 use super::validators::{validate_bet_leg, validate_decimal, validate_name_length};
-
-// -------------------
-// Bookmaker
-// -------------------
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct Bookmaker {
-    pub id: i64,
-    pub name: String,
-}
-
-#[derive(Validate, Deserialize, Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct BookmakerRequest {
-    #[validate(custom(function = "validate_name_length"))]
-    pub name: String,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct UserBookmaker {
-    pub user_id: i64,
-    pub bookmaker_id: i64,
-}
-
-// -------------------
-// Tippers
-// -------------------
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct Tipper {
-    pub id: i64,
-    pub name: String,
-}
-
-#[derive(Debug, Deserialize, Validate)]
-#[serde(rename_all = "camelCase")]
-pub struct TipperRequest {
-    #[validate(custom(function = "validate_name_length"))]
-    pub name: String,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct UserTipper {
-    pub user_id: i64,
-    pub tipper_id: i64,
-}
 
 // -------------------
 // Bets
 // -------------------
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "snake_case")]
-pub enum BetStatus {
-    Pending,
-    Won,
-    Lost,
-    HalfWon,
-    HalfLost,
-    Push,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "snake_case")]
-pub enum FinalType {
-    Single,
-    Double,
-    Treble,
-    #[serde(rename = "4_fold")]
-    FourFold,
-    #[serde(rename = "parlay_5_plus")]
-    Parlay5Plus,
-    MultipleCorrectScores,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
 #[serde(rename_all = "camelCase")]
 pub struct Bet {
     pub id: i64,
@@ -95,6 +24,8 @@ pub struct Bet {
     pub status: BetStatus,
     pub notes: Option<String>,
     pub freebet: bool,
+
+    #[sqlx(skip)]
     pub legs: Vec<BetLeg>,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
@@ -151,7 +82,7 @@ pub struct BetSelection {
     pub result: Option<BetStatus>,
 }
 
-#[derive(Debug, Serialize, Deserialize, Validate)]
+#[derive(Debug, Serialize, Deserialize, Validate, sqlx::FromRow)]
 #[serde(rename_all = "camelCase")]
 pub struct BetLeg {
     pub id: i64,
@@ -165,6 +96,7 @@ pub struct BetLeg {
     pub bet_type: BetType,
 
     #[validate(nested)]
+    #[sqlx(json)]
     pub selections: Vec<BetSelection>,
     pub home_result: Option<i32>,
     pub away_result: Option<i32>,
@@ -198,20 +130,4 @@ pub struct BetLegRequest {
     #[validate(range(min = 0, code = "INVALID_AWAY_RESULT", message = "Can't be negative"))]
     pub away_result: Option<i32>,
     pub result: Option<BetStatus>,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "snake_case")]
-pub enum BetType {
-    Moneyline,
-    ThreeWay,
-    Handicap,
-    Over,
-    Under,
-    BetBuilder,
-    Btts,
-    Other,
-    PlayerProps,
-    CorrectScore,
-    LadderChallenge,
 }
