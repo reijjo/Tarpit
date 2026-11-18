@@ -1,0 +1,35 @@
+info:
+  name: selection id empty
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{baseUrl}}/{{bets}}"
+  body:
+    type: json
+    data: |-
+      {
+        "stake": 10,
+        "finalOdds": 1.85,
+        "finalType": "single",
+        "legs": [
+          {
+            "category": "NBA",
+            "homeTeam": "Lakers",
+            "awayTeam": "Celtics",
+            "eventDate": "2026-11-19",
+            "odds": 1.85,
+            "betType": "moneyline",
+            "selections": [{ "id": "", "selection": "Lakers ML" }]
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

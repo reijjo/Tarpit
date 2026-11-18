@@ -1,0 +1,50 @@
+info:
+  name: valid with multiple bet legs
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/{{bets}}"
+  body:
+    type: json
+    data: |
+      
+      {
+        "stake": 10,
+        "finalOdds": 1.85,
+        "finalType": "single",
+        "bookmaker": "Bet365",
+        "tipper": "mytips",
+        "notes": "My first test bet",
+        "freebet": false,
+        "legs": [
+          {
+            "category": "NBA",
+            "homeTeam": "Lakers",
+            "awayTeam": "Celtics",
+            "eventDate": "2026-11-19",
+            "livebet": false,
+            "odds": 1.85,
+            "betType": "moneyline",
+            "selections": [
+              {
+                "id": "selection-1",
+                "selection": "Lakers ML",
+                "result": null
+              }
+            ],
+            "homeResult": null,
+            "awayResult": null,
+            "result": null
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
