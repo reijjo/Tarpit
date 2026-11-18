@@ -7,6 +7,7 @@ use validator::Validate;
 
 use super::enums::{BetStatus, BetType, FinalType};
 use super::validators::{validate_bet_leg, validate_decimal, validate_name_length};
+use super::{bookmakers::types::Bookmaker, categories::types::BetCategory, tippers::types::Tipper};
 
 // -------------------
 // Bets
@@ -40,8 +41,12 @@ pub struct BetRequest {
     #[validate(custom(function = "validate_decimal"))]
     pub final_odds: Decimal,
     pub final_type: FinalType,
-    pub bookmaker_id: Option<i64>,
-    pub tipper_id: Option<i64>,
+
+    #[validate(custom(function = "validate_name_length"))]
+    pub bookmaker: Option<String>,
+
+    #[validate(custom(function = "validate_name_length"))]
+    pub tipper: Option<String>,
 
     #[validate(length(
         max = 255,
@@ -107,7 +112,8 @@ pub struct BetLeg {
 #[serde(rename_all = "camelCase")]
 #[validate(schema(function = "validate_bet_leg"))]
 pub struct BetLegRequest {
-    pub category_id: i64,
+    #[validate(custom(function = "validate_name_length"))]
+    pub category: String,
 
     #[validate(custom(function = "validate_name_length"))]
     pub home_team: String,
@@ -122,6 +128,8 @@ pub struct BetLegRequest {
     #[validate(custom(function = "validate_decimal"))]
     pub odds: Decimal,
     pub bet_type: BetType,
+
+    #[validate(nested)]
     pub selections: Vec<BetSelection>,
 
     #[validate(range(min = 0, code = "INVALID_HOME_RESULT", message = "Can't be negative"))]
@@ -130,4 +138,15 @@ pub struct BetLegRequest {
     #[validate(range(min = 0, code = "INVALID_AWAY_RESULT", message = "Can't be negative"))]
     pub away_result: Option<i32>,
     pub result: Option<BetStatus>,
+}
+
+// -------------------
+// User tippers, categories and bookmakers
+// -------------------
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BetOptions {
+    pub categories: Vec<BetCategory>,
+    pub bookmakers: Vec<Bookmaker>,
+    pub tippers: Vec<Tipper>,
 }

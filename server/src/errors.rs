@@ -42,6 +42,17 @@ impl IntoResponse for AppError {
     }
 }
 
+impl From<sqlx::Error> for AppError {
+    fn from(err: sqlx::Error) -> Self {
+        tracing::error!("Database error: {err}");
+
+        Self::Internal(ErrorDetails {
+            error: "DATABASE_ERROR".to_string(),
+            message: Some("Database operation failed.".to_string()),
+        })
+    }
+}
+
 pub async fn unkown_endpoint() -> AppError {
     AppError::NotFound(ErrorDetails {
         error: "NOT_FOUND".to_string(),

@@ -1,5 +1,7 @@
 use crate::{
-    features::bets::handlers::get_bets, middleware::require_auth::require_auth, state::AppState,
+    features::bets::handlers::{create_bet, get_bet_options, get_bets},
+    middleware::require_auth::require_auth,
+    state::AppState,
 };
 use axum::{Router, middleware, routing::get};
 
@@ -15,7 +17,8 @@ pub mod validators;
 
 pub fn router() -> Router<AppState> {
     Router::new()
-        .route("/", get(get_bets))
+        .route("/", get(get_bets).post(create_bet))
+        .route("/options", get(get_bet_options))
         .merge(categories::router())
         .merge(bookmakers::router())
         .merge(tippers::router())
