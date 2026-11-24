@@ -13,7 +13,6 @@
 }
 
 .mobile_nav_btn {
-  background: rgb(from var(--primary-xxdark) r g b / 0.8);
   z-index: 15;
   position: absolute;
 
@@ -30,6 +29,7 @@
   display: grid;
   place-items: center;
   border: 1px solid rgb(from var(--secondary-light) r g b / 0.18);
+  background: rgb(from var(--primary-xxdark) r g b / 0.8);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
 
@@ -155,15 +155,22 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  height: 44px;
+  /* height: 44px; */
   display: flex;
   gap: 0.5rem;
   align-items: center;
   color: var(--text-light);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   font-weight: 400;
   letter-spacing: 0.06em;
   text-decoration: none;
+  padding-inline: 1rem;
+
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  background: rgb(from var(--primary-xxdark) r g b / 0.8);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
 }
 
 .nav_logo:hover {

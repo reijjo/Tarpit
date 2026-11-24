@@ -1,0 +1,62 @@
+.big_card {
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  padding-inline: 1rem;
+  box-shadow: var(--status-glow);
+}
+
+.pending {
+  --status-color: var(--info-base);
+  --status-bg: rgb(from var(--info-dark) r g b / 0.025);
+  --status-btn-color: var(--info-xlight);
+  --status-btn-bg: var(--info-xdark);
+  --status-glow:
+    0 0 4px rgb(from var(--status-color) r g b / 0.18),
+    0 0 8px rgb(from var(--status-color) r g b / 0.15),
+    0 0 16px rgb(from var(--status-color) r g b / 0.1);
+
+  border-color: var(--status-color);
+  background: linear-gradient(to bottom right, var(--status-bg), transparent);
+}
+
+.won {
+  --status-color: var(--success-base);
+  --status-bg: rgb(from var(--success-dark) r g b / 0.025);
+  --status-btn-color: var(--success-xlight);
+  --status-btn-bg: var(--success-dark);
+  --status-glow:
+    0 0 4px rgb(from var(--status-color) r g b / 0.18),
+    0 0 8px rgb(from var(--status-color) r g b / 0.15),
+    0 0 16px rgb(from var(--status-color) r g b / 0.1);
+
+  border-color: var(--status-color);
+  background: linear-gradient(to bottom right, var(--status-bg), transparent);
+}
+
+.lost {
+  --status-color: var(--error-base);
+  --status-bg: rgb(from var(--error-dark) r g b / 0.025);
+  --status-btn-color: var(--error-xlight);
+  --status-btn-bg: var(--error-dark);
+  --status-glow:
+    0 0 4px rgb(from var(--status-color) r g b / 0.18),
+    0 0 8px rgb(from var(--status-color) r g b / 0.15),
+    0 0 16px rgb(from var(--status-color) r g b / 0.1);
+
+  border-color: var(--status-color);
+  background: linear-gradient(to bottom right, var(--status-bg), transparent);
+}
+
+.push {
+  --status-color: var(--warning-base);
+  --status-bg: rgb(from var(--warning-dark) r g b / 0.025);
+  --status-btn-color: var(--warning-xlight);
+  --status-btn-bg: var(--warning-base);
+  --status-glow:
+    0 0 4px rgb(from var(--status-color) r g b / 0.18),
+    0 0 8px rgb(from var(--status-color) r g b / 0.15),
+    0 0 16px rgb(from var(--status-color) r g b / 0.1);
+
+  border-color: var(--status-color);
+  background: linear-gradient(to bottom right, var(--status-bg), transparent);
+}

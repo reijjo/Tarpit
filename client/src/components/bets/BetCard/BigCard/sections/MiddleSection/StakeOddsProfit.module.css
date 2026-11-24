@@ -1,0 +1,19 @@
+.stake_odds_profit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stake_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.stake_wrapper:last-child .stake_label {
+  text-align: right;
+}
+
+.stake_label {
+  color: var(--text-light-muted);
+  font-size: var(--text-sm);
+}

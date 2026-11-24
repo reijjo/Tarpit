@@ -1,9 +1,8 @@
 import { cookies } from "next/headers";
 
 import { ApiResponse } from "@/lib/types/api";
+import { User } from "@/lib/types/user";
 import type { LoginData, RegisterData } from "@/lib/validations/auth";
-
-import { User } from "../types/user";
 
 const AUTH_API_URL = "/api/v1/auth";
 

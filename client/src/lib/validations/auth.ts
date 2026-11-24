@@ -26,8 +26,6 @@ export const registerSchema = z
     path: ["passwordConfirm"],
   });
 
-export type RegisterData = z.infer<typeof registerSchema>;
-
 export const loginSchema = z.object({
   login: z
     .string()
@@ -41,4 +39,5 @@ export const loginSchema = z.object({
     .max(50, "Max 50 characters in password"),
 });
 
+export type RegisterData = z.infer<typeof registerSchema>;
 export type LoginData = z.infer<typeof loginSchema>;

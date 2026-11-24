@@ -1,0 +1,25 @@
+.notes_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.notes {
+  flex-grow: 1;
+  text-wrap: balance;
+
+  & p {
+    &:first-child {
+      color: var(--text-light-muted);
+    }
+    font-size: var(--text-sm);
+  }
+}
+
+.btn_group {
+  display: flex;
+  gap: 1rem;
+  align-self: flex-end;
+}

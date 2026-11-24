@@ -1,0 +1,45 @@
+.top_section {
+  border-bottom: 1px solid rgb(from var(--primary-base) r g b / 0.25);
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+  color: var(--text-light-muted);
+  padding-block: 1rem;
+  text-transform: capitalize;
+}
+
+.finaltype_freebet {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.finaltype_freebet span + span::before {
+  content: "·";
+  margin-right: 0.5rem;
+}
+
+.finaltype_status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+}
+
+.close_btn {
+  all: unset;
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent-xlight);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--accent-light);
+  }
+
+  & svg {
+    transform: translateY(1px);
+  }
+}
