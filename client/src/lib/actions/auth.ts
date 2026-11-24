@@ -130,6 +130,6 @@ export const signOut = async () => {
     }
 
     (await cookieStore).delete("id");
-    redirect("/");
+    redirect("/login");
   }
 };

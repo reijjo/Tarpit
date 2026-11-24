@@ -1,0 +1,9 @@
+.header_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  justify-content: space-between;
+  /* width: min(100%, 800px);
+  margin-inline: auto; */
+}

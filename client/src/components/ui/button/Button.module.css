@@ -4,11 +4,13 @@
   font-family: inherit;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-rounded);
   display: grid;
   place-items: center;
   text-transform: capitalize;
   letter-spacing: 0.05em;
+  height: max-content;
+  width: max-content;
 
   &:active {
     border: 1px solid black;
@@ -85,7 +87,7 @@
   backdrop-filter: blur(8px);
   color: var(--text-light);
   box-shadow:
-    0 -4px 16px rgb(255 255 255 / 0.075),
+    0 -4px 16px rgb(255 255 255 / 0.05),
     var(--shadow-sm),
     inset 0 -1px rgb(0 0 0 / 0.125),
     inset 0 1px rgb(255 255 255 / 0.125);
@@ -106,15 +108,15 @@
 
 /* SIZES */
 .sm {
-  padding: 0.5rem 1rem;
+  padding: 0.35rem 1.05rem;
   font-size: var(--text-sm);
 }
 .md {
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   font-size: 1rem;
 }
 .lg {
-  padding: 1rem 2rem;
+  padding: 0.75rem 2.25rem;
 }
 
 @media (width <= 680px) {

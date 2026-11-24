@@ -9,6 +9,7 @@
 }
 
 .font-nums {
-  font-family: var(--font-body);
+  font-family: var(--font-paper);
   font-variant-numeric: tabular-nums;
+  font-size: 0.9em;
 }

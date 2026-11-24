@@ -1,0 +1,126 @@
+.small_card {
+  width: 100%;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  padding-inline: 1rem;
+  box-shadow: var(--status-glow);
+  color: inherit;
+
+  &:hover {
+    box-shadow:
+      0 0 8px rgb(from var(--status-color) r g b / 0.28),
+      0 0 16px rgb(from var(--status-color) r g b / 0.25),
+      0 0 32px rgb(from var(--status-color) r g b / 0.2);
+  }
+}
+
+.small_card_content {
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) 3.5rem 6.5rem;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.open_button {
+  grid-column: 1 / 4;
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) 3.5rem;
+  align-items: center;
+  column-gap: 1rem;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  & h2 {
+    font-size: var(--text-base);
+
+    @media (width <= 600px) {
+      font-size: var(--text-sm);
+    }
+  }
+}
+
+.parsed_bet {
+  font-size: 1em;
+  color: var(--text-light-muted);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (width <= 600px) {
+    font-size: 0.95em;
+  }
+}
+
+.small_card_content > :last-child {
+  justify-self: end;
+}
+
+.odds {
+  text-align: right;
+}
+
+/* STATUS STYLES */
+.pending {
+  --status-color: var(--info-base);
+  --status-bg: rgb(from var(--info-dark) r g b / 0.125);
+  --status-btn-color: var(--info-xlight);
+  --status-btn-bg: var(--info-xdark);
+  --status-glow:
+    0 0 4px rgb(from var(--status-color) r g b / 0.18),
+    0 0 8px rgb(from var(--status-color) r g b / 0.15),
+    0 0 16px rgb(from var(--status-color) r g b / 0.1);
+
+  border-color: var(--status-color);
+  background: linear-gradient(to bottom right, var(--status-bg), transparent);
+}
+
+.won {
+  --status-color: var(--success-base);
+  --status-bg: rgb(from var(--success-dark) r g b / 0.125);
+  --status-btn-color: var(--success-xlight);
+  --status-btn-bg: var(--success-dark);
+  --status-glow:
+    0 0 4px rgb(from var(--status-color) r g b / 0.18),
+    0 0 8px rgb(from var(--status-color) r g b / 0.15),
+    0 0 16px rgb(from var(--status-color) r g b / 0.1);
+
+  border-color: var(--status-color);
+  background: linear-gradient(to bottom right, var(--status-bg), transparent);
+}
+
+.lost {
+  --status-color: var(--error-base);
+  --status-bg: rgb(from var(--error-dark) r g b / 0.125);
+  --status-btn-color: var(--error-xlight);
+  --status-btn-bg: var(--error-dark);
+  --status-glow:
+    0 0 4px rgb(from var(--status-color) r g b / 0.18),
+    0 0 8px rgb(from var(--status-color) r g b / 0.15),
+    0 0 16px rgb(from var(--status-color) r g b / 0.1);
+
+  border-color: var(--status-color);
+  background: linear-gradient(to bottom right, var(--status-bg), transparent);
+}
+
+.push {
+  --status-color: var(--warning-base);
+  --status-bg: rgb(from var(--warning-dark) r g b / 0.125);
+  --status-btn-color: var(--warning-xlight);
+  --status-btn-bg: var(--warning-base);
+  --status-glow:
+    0 0 4px rgb(from var(--status-color) r g b / 0.18),
+    0 0 8px rgb(from var(--status-color) r g b / 0.15),
+    0 0 16px rgb(from var(--status-color) r g b / 0.1);
+
+  border-color: var(--status-color);
+  background: linear-gradient(to bottom right, var(--status-bg), transparent);
+}

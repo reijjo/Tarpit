@@ -61,7 +61,7 @@ export default function MobileNav({ user }: MobileNavProps) {
       aria-label="Mobile navigation"
     >
       <Link href="/" className={styles.nav_logo} onClick={closeMenu}>
-        <Image src="/logo.svg" alt="" width={44} height={44} />
+        <Image src="/logo.svg" alt="" width={24} height={24} />
         <p>TÄRPIT</p>
       </Link>
       <button

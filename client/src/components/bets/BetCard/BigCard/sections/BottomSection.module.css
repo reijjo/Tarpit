@@ -1,0 +1,40 @@
+.bottom_section {
+  border-top: 1px solid rgb(from var(--primary-base) r g b / 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-sm);
+  color: var(--text-light-muted);
+  padding-block: 1rem;
+
+  text-transform: capitalize;
+}
+
+.bookmaker_tipper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bookmaker_tipper span + span::before {
+  content: "·";
+  margin-right: 0.5rem;
+}
+
+.close_btn {
+  all: unset;
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-light);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--accent-xlight);
+  }
+
+  & svg {
+    transform: translateY(1px);
+  }
+}

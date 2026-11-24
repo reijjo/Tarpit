@@ -1,6 +1,8 @@
-import Link, { type LinkProps } from "next/link";
-import type { ComponentProps } from "react";
 import styles from "./Button.module.css";
+
+import type { ComponentProps } from "react";
+
+import Link, { type LinkProps } from "next/link";
 
 type LinkButtonProps = LinkProps &
   Omit<ComponentProps<"a">, keyof LinkProps> & {

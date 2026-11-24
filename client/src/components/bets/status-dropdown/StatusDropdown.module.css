@@ -1,0 +1,102 @@
+.status_dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid transparent;
+  border-radius: var(--radius-rounded);
+  color: var(--dropdown-color);
+  background: rgb(from var(--dropdown-bg) r g b / 0.75);
+
+  &:hover {
+    border-color: rgb(from var(--dropdown-color) r g b / 0.25);
+  }
+
+  &:has(select:focus-visible) {
+    box-shadow: 0 0 0 2px rgb(from var(--dropdown-color) r g b / 0.45);
+  }
+
+  & select {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0.25rem 2rem 0.25rem 0.75rem;
+    text-transform: capitalize;
+  }
+
+  & svg {
+    position: absolute;
+    right: 0.65rem;
+    pointer-events: none;
+    transform: translateY(1px);
+  }
+}
+
+.has_selected_label {
+  display: grid;
+  align-items: center;
+
+  & select {
+    grid-area: 1 / 1;
+    color: transparent;
+
+    & option {
+      color: var(--dropdown-color);
+    }
+  }
+}
+
+.selected_label {
+  grid-area: 1 / 1;
+  z-index: 1;
+  padding: 0.25rem 2rem 0.25rem 0.75rem;
+  text-transform: capitalize;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.card {
+  --dropdown-color: var(--status-btn-color);
+  --dropdown-bg: var(--status-btn-bg);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.selection {
+  font-size: 0.9em;
+  --dropdown-color: var(--selection-color);
+  --dropdown-bg: var(--selection-bg);
+
+  & select {
+    padding-block: 0.125rem;
+  }
+}
+
+.pending {
+  --selection-color: var(--info-xlight);
+  --selection-bg: var(--info-xdark);
+}
+
+.won {
+  --selection-color: var(--success-light);
+  --selection-bg: var(--success-dark);
+}
+
+.lost,
+.half_lost {
+  --selection-color: var(--error-light);
+  --selection-bg: var(--error-dark);
+}
+
+.half_won {
+  --selection-color: var(--success-light);
+  --selection-bg: var(--success-dark);
+}
+
+.push {
+  --selection-color: var(--warning-light);
+  --selection-bg: var(--warning-dark);
+}

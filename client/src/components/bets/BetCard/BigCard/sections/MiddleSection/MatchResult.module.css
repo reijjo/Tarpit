@@ -1,0 +1,30 @@
+.match {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 0.5rem;
+}
+
+.teams,
+.results {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  & .team {
+    text-transform: capitalize;
+  }
+}
+
+.live {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-sm);
+  color: var(--text-light-muted);
+}
+
+.muted {
+  color: var(--text-light-muted);
+}

@@ -1,0 +1,31 @@
+.middle_section {
+  /* font-size: var(--text-base); */
+  padding-block: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.leg {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.picks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pick_info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-sm);
+  color: var(--text-light-muted);
+}
+.pick_info span + span::before {
+  content: "·";
+  margin-right: 0.5rem;
+}
